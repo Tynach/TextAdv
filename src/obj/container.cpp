@@ -44,6 +44,7 @@ void container::list_contents()
 	for (int loc = 0; loc < this->contents.size(); loc++) {
 		cout << "\tItem:\t\t" << this->contents.at(loc)->get_name() << endl;
 		cout << "\tDescription: \t" << this->contents.at(loc)->get_desc() << endl;
+		cout << "\tParent:\t\t" << this->contents.at(loc)->get_parent_name() << endl;
 		cout << endl;
 	}
 }

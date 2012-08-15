@@ -32,6 +32,11 @@ std::string item::get_desc()
 	return this->desc;
 }
 
+std::string item::get_parent_name()
+{
+	return this->parent->get_name();
+}
+
 int item::move(container* parent)
 {
 	int test = this->parent->remove_item(this);
@@ -42,4 +47,6 @@ int item::move(container* parent)
 
 	this->parent = parent;
 	this->parent->add_item(this);
+
+	return 0;
 }

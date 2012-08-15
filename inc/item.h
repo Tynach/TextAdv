@@ -18,6 +18,7 @@ public:
 
 	std::string get_name();
 	std::string get_desc();
+	std::string get_parent_name();
 
 	int move(container*);
 };
