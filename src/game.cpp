@@ -29,5 +29,7 @@ int main(int argc, char *argv[])
 	dungeon.list_contents();
 	player.list_contents();
 
+	cout << "Everything worked! BUT WAIT O_O\n\n";
+
 	return 0;
 }
