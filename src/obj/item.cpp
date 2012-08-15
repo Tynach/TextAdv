@@ -2,19 +2,12 @@
 #include <item.h>
 #include <container.h>
 
-//Private
-int item::set_parent(container* parent)
-{
-	this->parent = parent;
-}
-
-//Public
 item::item()
 {}
 
-item::item(container* parent)
+item::item(container* parent): parent(parent)
 {
-	this->parent = parent;
+	parent->add_item(this);
 }
 
 int item::set_name(std::string name)

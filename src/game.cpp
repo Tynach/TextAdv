@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
 	dungeon.set_name("Dungeon");
 	dungeon.set_desc("Icky dungeon :(");
 
-	item hat(dungeon);
+	item hat(&dungeon);
 	hat.set_name("Hat");
 	hat.set_desc("An ugly hat.");
 
-	mob player(dungeon);
+	mob player(&dungeon);
 	player.set_name("Bob");
 	player.set_desc("Human. Not very impressive.");
 

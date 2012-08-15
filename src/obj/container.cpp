@@ -3,6 +3,12 @@
 
 using namespace std;
 
+container::container()
+{}
+
+container::container(container* parent): item(parent)
+{}
+
 int container::find_item(item* query)
 {
 	for (int loc = 0; loc < this->contents.size(); loc++) {
@@ -12,6 +18,11 @@ int container::find_item(item* query)
 	}
 
 	return -1;
+}
+
+int container::add_item(item* query)
+{
+	this->contents.push_back(query);
 }
 
 int container::remove_item(item* query)
@@ -28,7 +39,7 @@ int container::remove_item(item* query)
 
 void container::list_contents()
 {
-	cout << this->get_name() << " contains:" << endl;
+	cout << this->get_name() << " contains " << this->contents.size() << " objects:" << endl;
 
 	for (int loc = 0; loc < this->contents.size(); loc++) {
 		cout << "\tItem:\t\t" << this->contents.at(loc)->get_name() << endl;

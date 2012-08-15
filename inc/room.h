@@ -5,7 +5,9 @@
 
 class room: public container
 {
-	
+public:
+	room();
+	room(container* parent);
 };
 
 #endif

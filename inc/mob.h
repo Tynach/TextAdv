@@ -7,6 +7,9 @@
 class mob: public container
 {
 	room* location;
+public:
+	mob();
+	mob(container* parent);
 };
 
 #endif

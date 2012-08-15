@@ -9,8 +9,6 @@ class item
 	std::string name;
 	std::string desc;
 	container* parent;
-
-	int set_parent(container*);
 public:
 	item();
 	item(container* parent);

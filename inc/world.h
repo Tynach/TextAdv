@@ -5,7 +5,9 @@
 
 class world: public container
 {
-	
+public:
+	world();
+	world(container* parent);
 };
 
 #endif
