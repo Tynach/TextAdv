@@ -20,6 +20,14 @@ int main(int argc, char *argv[])
 	player.set_desc("Human. Not very impressive.");
 
 	dungeon.list_contents();
+	player.list_contents();
+
+	hat.move(&player);
+
+	cout << "\nAfter moving the hat to the player:\n\n";
+
+	dungeon.list_contents();
+	player.list_contents();
 
 	return 0;
 }

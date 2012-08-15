@@ -19,7 +19,7 @@ public:
 	std::string get_name();
 	std::string get_desc();
 
-	int give_to(container*);
+	int move(container*);
 };
 
 #endif

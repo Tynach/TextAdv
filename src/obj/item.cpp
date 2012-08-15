@@ -32,7 +32,7 @@ std::string item::get_desc()
 	return this->desc;
 }
 
-int item::give_to(container* parent)
+int item::move(container* parent)
 {
 	int test = this->parent->remove_item(this);
 
@@ -41,4 +41,5 @@ int item::give_to(container* parent)
 	}
 
 	this->parent = parent;
+	this->parent->add_item(this);
 }
