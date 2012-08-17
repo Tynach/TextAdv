@@ -39,14 +39,16 @@ std::string item::get_parent_name()
 
 int item::move(container* parent)
 {
-	int test = this->parent->remove_item(this);
+	container* old_parent = this->parent;
+
+	this->parent = parent;
+	this->parent->add_item(this);
+
+	int test = old_parent->remove_item(this);
 
 	if (test < 0) {
 		return test;
 	}
-
-	this->parent = parent;
-	this->parent->add_item(this);
 
 	return 0;
 }

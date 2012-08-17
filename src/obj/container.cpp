@@ -31,7 +31,7 @@ int container::remove_item(item* query)
 	int loc = this->find_item(query) - 1;
 
 	if (loc < -1) {
-		return loc;
+		return loc + 1;
 	}
 
 	this->contents.erase(this->contents.begin() + loc);

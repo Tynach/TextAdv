@@ -9,12 +9,12 @@ class container: public item
 	std::vector<item*> contents;
 
 	int add_item(item*);
+	int remove_item(item*);
 public:
 	container();
 	container(container* parent);
 
 	int find_item(item*);
-	int remove_item(item*);
 
 	void list_contents();
 
