@@ -23,6 +23,7 @@ int container::find_item(item* query)
 int container::add_item(item* query)
 {
 	this->contents.push_back(query);
+	return 0;
 }
 
 int container::remove_item(item* query)
