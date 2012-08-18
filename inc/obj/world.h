@@ -4,9 +4,6 @@
 #include <obj/container.h>
 
 class world: public container
-{
-public:
-	world();
-};
+{};
 
 #endif
