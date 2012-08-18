@@ -2,7 +2,7 @@
 #define CONTAINER_H
 
 #include <vector>
-#include <item.h>
+#include <obj/item.h>
 
 class container: public item
 {

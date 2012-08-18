@@ -1,14 +1,17 @@
 #include <iostream>
-#include <world.h>
-#include <container.h>
-#include <item.h>
-#include <room.h>
-#include <mob.h>
+#include <obj/world.h>
+#include <obj/container.h>
+#include <obj/item.h>
+#include <obj/room.h>
+#include <obj/mob.h>
 
 using namespace std;
 
 world::world()
 {
+	set_name("Dungeon");
+	set_desc("Icky dungeon :(");
+
 	room start;
 	mob player(&start);
 	item hat(&start);
@@ -16,7 +19,7 @@ world::world()
 	start.set_name("Starting Point");
 	start.set_desc("The room you start out in.");
 
-	player.set_name("Player 1");
+	player.set_name("Player One");
 	player.set_desc("You don't know what you look like? Perhaps you should try a mirror.");
 
 	hat.set_name("Hat");

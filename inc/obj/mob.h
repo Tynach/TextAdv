@@ -1,8 +1,8 @@
 #ifndef MOB_H
 #define MOB_H
 
-#include <container.h>
-#include <room.h>
+#include <obj/container.h>
+#include <obj/room.h>
 
 class mob: public container
 {

@@ -1,6 +1,6 @@
 #include <string>
-#include <item.h>
-#include <container.h>
+#include <obj/item.h>
+#include <obj/container.h>
 
 item::item()
 {}
@@ -39,16 +39,14 @@ std::string item::get_parent_name()
 
 int item::move(container* parent)
 {
-	container* old_parent = this->parent;
-
-	this->parent = parent;
-	this->parent->add_item(this);
-
-	int test = old_parent->remove_item(this);
+	int test = this->parent->remove_item(this);
 
 	if (test < 0) {
 		return test;
 	}
+
+	this->parent = parent;
+	this->parent->add_item(this);
 
 	return 0;
 }

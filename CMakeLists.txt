@@ -4,7 +4,7 @@ set(CMAKE_BUILD_TYPE Debug)
 include_directories("inc")
 add_subdirectory("src")
 
-set(libs objs)
+set(libs engine)
 
 add_executable(game src/game.cpp)
 target_link_libraries(game ${libs})

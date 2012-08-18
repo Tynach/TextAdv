@@ -1,5 +1,5 @@
 #include <iostream>
-#include <container.h>
+#include <obj/container.h>
 
 using namespace std;
 
@@ -11,8 +11,9 @@ container::container(container* parent): item(parent)
 
 int container::find_item(item* query)
 {
-	for (int loc = 0; loc < this->contents.size(); loc++) {
-		if (this->contents.at(loc) == query) {
+	int size = this->contents.size();
+	for (int loc = 0; loc < size; loc++) {
+		if (this->contents[loc] == query) {
 			return loc;
 		}
 	}
@@ -28,10 +29,10 @@ int container::add_item(item* query)
 
 int container::remove_item(item* query)
 {
-	int loc = this->find_item(query) - 1;
+	int loc = this->find_item(query);
 
-	if (loc < -1) {
-		return loc + 1;
+	if (loc < 0) {
+		return loc;
 	}
 
 	this->contents.erase(this->contents.begin() + loc);
