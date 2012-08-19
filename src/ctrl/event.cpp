@@ -1,7 +1,7 @@
+#include <string>
 #include <ctrl/event.h>
 
-event::event(...)
-{}
-
-int event::run()
-{}
+event::event(std::string, ...)
+{
+	
+}

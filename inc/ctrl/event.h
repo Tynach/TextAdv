@@ -7,9 +7,8 @@ class event
 {
 	std::string actions[];
 public:
-	event(...);
-
-	int run();
+	event(std::string , ...);
+	virtual int run();
 };
 
 #endif
