@@ -1,6 +1,7 @@
 #include <string>
 #include <obj/item.h>
 #include <obj/container.h>
+#include <ctrl/event.h>
 
 item::item()
 {}
@@ -35,6 +36,26 @@ std::string item::get_desc()
 std::string item::get_parent_name()
 {
 	return parent->get_name();
+}
+
+int item::find_event(std::string trigger)
+{
+	int size = events.size();
+
+	for (int loc = 0; loc < size; loc++) {
+		if (events[loc].find_trigger(trigger) < 0) {
+			continue;
+		} else {
+			return loc;
+		}
+	}
+
+	return -1;
+}
+
+int item::trigger_event(int loc)
+{
+	return events[loc].run();
 }
 
 int item::move(container* new_parent)
