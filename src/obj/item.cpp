@@ -38,7 +38,7 @@ std::string item::get_parent_name()
 	return parent->get_name();
 }
 
-int item::find_event(std::string trigger)
+int item::trigger_event(std::string trigger)
 {
 	int size = events.size();
 
@@ -46,16 +46,11 @@ int item::find_event(std::string trigger)
 		if (events[loc].find_trigger(trigger) < 0) {
 			continue;
 		} else {
-			return loc;
+			return events[loc].run();
 		}
 	}
 
 	return -1;
-}
-
-int item::trigger_event(int loc)
-{
-	return events[loc].run();
 }
 
 int item::move(container* new_parent)

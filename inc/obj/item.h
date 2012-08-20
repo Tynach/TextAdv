@@ -24,8 +24,7 @@ public:
 	std::string get_desc();
 	std::string get_parent_name();
 
-	int find_event(std::string);
-	int trigger_event(int);
+	int trigger_event(std::string);
 	int move(container*);
 };
 
