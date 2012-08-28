@@ -1,14 +1,10 @@
 #include <string>
 #include <obj/item.h>
 #include <obj/container.h>
-#include <ctrl/event.h>
 
-item::item()
-{}
-
-item::item(container* parent): parent(parent)
+item::item(container& new_parent): parent(&new_parent)
 {
-	parent->add_item(this);
+	parent->add_item(*this);
 }
 
 int item::set_name(std::string new_name)
@@ -38,31 +34,16 @@ std::string item::get_parent_name()
 	return parent->get_name();
 }
 
-int item::trigger_event(std::string trigger)
+int item::move(container& new_parent)
 {
-	int size = events.size();
-
-	for (int loc = 0; loc < size; loc++) {
-		if (events[loc].find_trigger(trigger) < 0) {
-			continue;
-		} else {
-			return events[loc].run();
-		}
-	}
-
-	return -1;
-}
-
-int item::move(container* new_parent)
-{
-	int test = parent->remove_item(this);
+	int test = parent->remove_item(*this);
 
 	if (test < 0) {
 		return test;
 	}
 
-	parent = new_parent;
-	parent->add_item(this);
+	parent = &new_parent;
+	parent->add_item(*this);
 
 	return 0;
 }

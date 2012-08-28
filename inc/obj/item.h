@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <ctrl/event.h>
 
 class container;
 
@@ -12,10 +11,8 @@ class item
 	std::string name;
 	std::string desc;
 	container* parent;
-	std::vector<event> events;
 public:
-	item();
-	item(container* parent);
+	item(container& parent);
 
 	int set_name(std::string);
 	int set_desc(std::string);
@@ -24,8 +21,7 @@ public:
 	std::string get_desc();
 	std::string get_parent_name();
 
-	int trigger_event(std::string);
-	int move(container*);
+	int move(container&);
 };
 
 #endif

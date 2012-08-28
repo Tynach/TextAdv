@@ -3,17 +3,14 @@
 
 using namespace std;
 
-container::container()
+container::container(container& parent): item(parent)
 {}
 
-container::container(container* parent): item(parent)
-{}
-
-int container::find_item(item* query)
+int container::find_item(item& query)
 {
 	int size = contents.size();
 	for (int loc = 0; loc < size; loc++) {
-		if (contents[loc] == query) {
+		if (contents[loc] == &query) {
 			return loc;
 		}
 	}
@@ -21,13 +18,13 @@ int container::find_item(item* query)
 	return -1;
 }
 
-int container::add_item(item* query)
+int container::add_item(item& query)
 {
-	contents.push_back(query);
+	contents.push_back(&query);
 	return 0;
 }
 
-int container::remove_item(item* query)
+int container::remove_item(item& query)
 {
 	int loc = find_item(query);
 

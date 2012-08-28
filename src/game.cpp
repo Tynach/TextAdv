@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 	dungeon.set_name("Dungeon");
 	dungeon.set_desc("Icky dungeon :(");
 
-	room start(&dungeon);
-	mob player(&start);
-	item hat(&start);
+	room start(dungeon);
+	mob player(start);
+	item hat(start);
 
 	start.set_name("Starting Point");
 	start.set_desc("The room you start out in.");
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	start.list_contents();
 	player.list_contents();
 
-	hat.move(&player);
+	hat.move(player);
 
 	cout << "\nAfter moving the hat to the player:\n\n";
 
