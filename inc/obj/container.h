@@ -8,13 +8,12 @@ class container: public item
 {
 	std::vector<item*> contents;
 
-	int add_item(item&);
-	int remove_item(item&);
+	void add_item(item&);
+	void remove_item(item&);
 public:
 	container(container& parent);
 
 	int find_item(item&);
-
 	void list_contents();
 
 	friend class item;

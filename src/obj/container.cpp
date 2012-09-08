@@ -1,7 +1,6 @@
-#include <iostream>
+#include <cstdio>
+#include <exception.h>
 #include <obj/container.h>
-
-using namespace std;
 
 container::container(container& parent): item(parent)
 {}
@@ -15,25 +14,18 @@ int container::find_item(item& query)
 		}
 	}
 
-	return -1;
+	throw(exception("Could not find item."));
 }
 
-int container::add_item(item& query)
+void container::add_item(item& query)
 {
 	contents.push_back(&query);
-	return 0;
 }
 
-int container::remove_item(item& query)
+void container::remove_item(item& query)
 {
 	int loc = find_item(query);
-
-	if (loc < 0) {
-		return loc;
-	}
-
 	contents.erase(contents.begin() + loc);
-	return 0;
 }
 
 void container::list_contents()
@@ -42,17 +34,16 @@ void container::list_contents()
 
 	if (size > 0) {
 		if (size == 1) {
-			cout << get_name() << " contains " << size << " object:\n";
+			printf("%s contains %d object:\n", get_name().c_str(), size);
 		} else {
-			cout << get_name() << " contains " << size << " objects:\n";
+			printf("%s contains %d objects:\n", get_name().c_str(), size);
 		}
 		for (int loc = 0; loc < size; loc++) {
-			cout << "\tItem:\t\t" << contents[loc]->get_name() << endl;
-			cout << "\tDescription: \t" << contents[loc]->get_desc() << endl;
-			cout << "\tParent:\t\t" << contents[loc]->get_parent_name() << endl;
-			cout << endl;
+			printf("\tItem:\t\t%s\n", contents[loc]->get_name().c_str());
+			printf("\tDescription:\t%s\n", contents[loc]->get_desc().c_str());
+			printf("\tParent:\t\t%s\n\n", contents[loc]->get_parent_name().c_str());
 		}
 	} else {
-		cout << get_name() << " is empty.\n";
+		printf("%s is empty.\n\n", get_name().c_str());
 	}
 }

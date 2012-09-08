@@ -14,14 +14,14 @@ class item
 public:
 	item(container& parent);
 
-	int set_name(std::string);
-	int set_desc(std::string);
+	void set_name(std::string);
+	void set_desc(std::string);
 
 	std::string get_name();
 	std::string get_desc();
 	std::string get_parent_name();
 
-	int move(container&);
+	void move(container&);
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <obj/world.h>
 #include <obj/room.h>
 #include <obj/mob.h>
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	hat.move(player);
 
-	cout << "\nAfter moving the hat to the player:\n\n";
+	printf("After moving the hat to the player:\n\n");
 
 	start.list_contents();
 	player.list_contents();
