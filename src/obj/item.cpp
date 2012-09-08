@@ -4,7 +4,7 @@
 #include <exception.h>
 #include <obj/container.h>
 
-item::item(container& new_parent): parent(&new_parent)
+item::item(container* new_parent): parent(new_parent)
 {
 	parent->add_item(*this);
 }

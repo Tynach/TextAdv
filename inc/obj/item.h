@@ -12,7 +12,7 @@ class item
 	std::string desc;
 	container* parent;
 public:
-	item(container& parent);
+	item(container* parent);
 
 	void set_name(std::string);
 	void set_desc(std::string);

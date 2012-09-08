@@ -2,7 +2,7 @@
 #include <exception.h>
 #include <obj/container.h>
 
-container::container(container& parent): item(parent)
+container::container(container* parent): item(parent)
 {}
 
 int container::find_item(item& query)
@@ -14,7 +14,7 @@ int container::find_item(item& query)
 		}
 	}
 
-	throw(exception("Could not find item."));
+	throw(item_missing_exception("Could not find item.", query.get_name()));
 }
 
 void container::add_item(item& query)

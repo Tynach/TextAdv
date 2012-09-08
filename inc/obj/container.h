@@ -11,7 +11,7 @@ class container: public item
 	void add_item(item&);
 	void remove_item(item&);
 public:
-	container(container& parent);
+	container(container* parent);
 
 	int find_item(item&);
 	void list_contents();

@@ -1,4 +1,4 @@
 #include <obj/world.h>
 
-world::world(): container(*this)
+world::world(): container(0)
 {}
