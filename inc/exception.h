@@ -15,4 +15,9 @@ struct item_missing_exception: exception
 	item_missing_exception(std::string, std::string);
 };
 
+struct parent_missing_exception: exception
+{
+	parent_missing_exception(std::string);
+};
+
 #endif

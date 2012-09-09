@@ -4,8 +4,12 @@
 #include <exception.h>
 #include <obj/container.h>
 
-item::item(container* new_parent = 0): parent(new_parent)
+item::item(container* new_parent): parent(new_parent)
 {
+	if (parent == 0) {
+		return;
+	}
+
 	parent->add_item(*this);
 }
 

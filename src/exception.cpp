@@ -6,3 +6,6 @@ exception::exception(std::string message): message(message)
 
 item_missing_exception::item_missing_exception(std::string message, std::string item_name): exception(message), item_name(item_name)
 {}
+
+parent_missing_exception::parent_missing_exception(std::string message): exception(message)
+{}

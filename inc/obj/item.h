@@ -10,6 +10,7 @@ class item
 {
 	std::string name;
 	std::string desc;
+protected:
 	container* parent;
 public:
 	item(container* parent);
