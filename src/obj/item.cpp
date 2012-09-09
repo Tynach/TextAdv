@@ -13,6 +13,11 @@ item::item(container* new_parent): parent(new_parent)
 	parent->add_item(*this);
 }
 
+item::item(container& new_parent): parent(&new_parent)
+{
+	parent->add_item(*this);
+}
+
 void item::set_name(std::string new_name)
 {
 	name = new_name;

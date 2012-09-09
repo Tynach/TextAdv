@@ -7,7 +7,7 @@
 class mob: public container
 {
 public:
-	mob(container* parent);
+	mob(container& parent);
 };
 
 #endif

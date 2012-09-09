@@ -12,8 +12,9 @@ class item
 	std::string desc;
 protected:
 	container* parent;
-public:
 	item(container* parent);
+public:
+	item(container& parent);
 
 	void set_name(std::string);
 	void set_desc(std::string);

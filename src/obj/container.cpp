@@ -5,6 +5,9 @@
 container::container(container* parent): item(parent)
 {}
 
+container::container(container& parent): item(parent)
+{}
+
 int container::find_item(item& query)
 {
 	int size = contents.size();
