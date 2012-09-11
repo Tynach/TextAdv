@@ -44,7 +44,7 @@ void container::list_contents()
 		for (int loc = 0; loc < size; loc++) {
 			printf("\tItem:\t\t%s\n", contents[loc]->get_name().c_str());
 			printf("\tDescription:\t%s\n", contents[loc]->get_desc().c_str());
-			printf("\tParent:\t\t%s\n\n", contents[loc]->get_parent_name().c_str());
+			printf("\tParent:\t\t%s\n\n", contents[loc]->get_parent().get_name().c_str());
 		}
 	} else {
 		printf("%s is empty.\n\n", get_name().c_str());

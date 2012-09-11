@@ -38,9 +38,9 @@ std::string item::get_desc()
 	return desc;
 }
 
-std::string item::get_parent_name()
+container& item::get_parent()
 {
-	return parent->get_name();
+	return *parent;
 }
 
 void item::move(container& new_parent)

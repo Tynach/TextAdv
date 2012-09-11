@@ -4,17 +4,15 @@
 #include <obj/mob.h>
 #include <obj/item.h>
 
-using namespace std;
+world dungeon;
+room start(dungeon);
+mob player(start);
+item hat(start);
 
 int main(int argc, char *argv[])
 {
-	world dungeon;
 	dungeon.set_name("Dungeon");
 	dungeon.set_desc("Icky dungeon :(");
-
-	room start(dungeon);
-	mob player(start);
-	item hat(start);
 
 	start.set_name("Starting Point");
 	start.set_desc("The room you start out in.");
