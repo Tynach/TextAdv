@@ -50,7 +50,7 @@ void item::move(container& new_parent)
 
 		parent = &new_parent;
 		parent->add_item(*this);
-	} catch (exception& e) {
-		fprintf(stderr, "Error: %s\n", e.message.c_str());
+	} catch (std::exception& e) {
+		fprintf(stderr, "Error: %s\n", e.what());
 	}
 }

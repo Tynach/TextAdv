@@ -1,11 +1,8 @@
-#include <string>
 #include <exception.h>
+using std::basic_string;
 
-exception::exception(std::string message): message(message)
+missing_item::missing_item(basic_string<char> what_arg): runtime_error(what_arg)
 {}
 
-item_missing_exception::item_missing_exception(std::string message, std::string item_name): exception(message), item_name(item_name)
-{}
-
-parent_missing_exception::parent_missing_exception(std::string message): exception(message)
+missing_parent::missing_parent(basic_string<char> what_arg): runtime_error(what_arg)
 {}

@@ -17,7 +17,7 @@ int container::find_item(item& query)
 		}
 	}
 
-	throw(item_missing_exception("Could not find item.", query.get_name()));
+	throw(missing_item("Object '" + get_name() + "' has no item '" + query.get_name() + ".'"));
 }
 
 void container::add_item(item& query)

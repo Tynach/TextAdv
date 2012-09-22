@@ -1,23 +1,19 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 
-#include <string>
+#include <stdexcept>
+using std::runtime_error;
 
-struct exception
+class missing_item: public runtime_error
 {
-	std::string message;
-	exception(std::string);
+public:
+	missing_item(std::basic_string<char>);
 };
 
-struct item_missing_exception: exception
+class missing_parent: public runtime_error
 {
-	std::string item_name;
-	item_missing_exception(std::string, std::string);
-};
-
-struct parent_missing_exception: exception
-{
-	parent_missing_exception(std::string);
+public:
+	missing_parent(std::basic_string<char>);
 };
 
 #endif
