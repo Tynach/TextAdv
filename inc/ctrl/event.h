@@ -5,7 +5,7 @@
 
 class event
 {
-	
+
 };
 
 #endif
