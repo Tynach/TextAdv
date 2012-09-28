@@ -2,6 +2,8 @@
 #include <my_exceptions.h>
 #include <obj/container.h>
 
+using std::printf;
+
 container::container(container* parent): item(parent)
 {}
 

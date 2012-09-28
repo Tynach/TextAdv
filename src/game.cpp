@@ -4,6 +4,8 @@
 #include <obj/mob.h>
 #include <obj/item.h>
 
+using std::printf;
+
 world dungeon;
 room start(dungeon);
 mob player(start);

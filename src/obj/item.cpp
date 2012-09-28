@@ -4,6 +4,8 @@
 #include <my_exceptions.h>
 #include <obj/container.h>
 
+using std::fprintf;
+
 item::item(container* new_parent): parent(new_parent)
 {
 	if (parent == 0) {
