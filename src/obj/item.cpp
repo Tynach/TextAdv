@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <string>
 #include <obj/item.h>
-#include <exception.h>
+#include <my_exceptions.h>
 #include <obj/container.h>
 
 item::item(container* new_parent): parent(new_parent)
