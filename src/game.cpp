@@ -6,34 +6,34 @@
 
 using std::printf;
 
-world dungeon;
-room start(dungeon);
-mob player(start);
-item hat(start);
-
 int main(int argc, char *argv[])
 {
-	dungeon.set_name("Dungeon");
-	dungeon.set_desc("Icky dungeon :(");
+	world* dungeon = new world();
+	room* start = new room(*dungeon);
+	mob* player = new mob(*start);
+	item* hat = new item(*start);
 
-	start.set_name("Starting Point");
-	start.set_desc("The room you start out in.");
+	dungeon->set_name("Dungeon");
+	dungeon->set_desc("Icky dungeon :(");
 
-	player.set_name("Player One");
-	player.set_desc("You don't know what you look like? Perhaps you should try a mirror.");
+	start->set_name("Starting Point");
+	start->set_desc("The room you start out in.");
 
-	hat.set_name("Hat");
-	hat.set_desc("A somewhat ugly hat.");
+	player->set_name("Player One");
+	player->set_desc("You don't know what you look like? Perhaps you should try a mirror.");
 
-	start.list_contents();
-	player.list_contents();
+	hat->set_name("Hat");
+	hat->set_desc("A somewhat ugly hat.");
 
-	hat.move(player);
+	start->list_contents();
+	player->list_contents();
+
+	hat->move(*player);
 
 	printf("After moving the hat to the player:\n\n");
 
-	start.list_contents();
-	player.list_contents();
+	start->list_contents();
+	player->list_contents();
 
 	return 0;
 }

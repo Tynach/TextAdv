@@ -42,6 +42,10 @@ std::string item::get_desc()
 
 container& item::get_parent()
 {
+	if (parent == 0) {
+		throw(missing_parent("Object '" + get_name() + "' has no parent."));
+	}
+
 	return *parent;
 }
 
