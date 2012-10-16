@@ -1,8 +1,13 @@
 #include <cstdio>
+#include <string>
+#include <algorithm>
 #include <my_exceptions.h>
 #include <obj/container.h>
 
 using std::printf;
+using std::string;
+using ::tolower;
+using std::transform;
 
 container::container(container* parent): item(parent)
 {}
@@ -13,6 +18,7 @@ container::container(container& parent): item(parent)
 int container::find_item(item& query)
 {
 	int size = contents.size();
+
 	for (int loc = 0; loc < size; loc++) {
 		if (contents[loc] == &query) {
 			return loc;
@@ -20,6 +26,25 @@ int container::find_item(item& query)
 	}
 
 	throw(missing_item("Object '" + get_name() + "' has no item '" + query.get_name() + ".'"));
+}
+
+int container::find_item(string query)
+{
+	string query_lower, check_lower;
+	int size = contents.size();
+
+	transform(query.begin(), query.end(), query_lower.begin(), tolower);
+
+	for (int loc = 0; loc < size; loc++) {
+		check_lower = contents[loc]->get_name();
+		transform(check_lower.begin(), check_lower.end(), check_lower.begin(), tolower);
+
+		if (query_lower.compare(check_lower)) {
+			return loc;
+		}
+	}
+
+	throw(missing_item("Object '" + get_name() + "' has no item '" + query + ".'"));
 }
 
 void container::add_item(item& query)
