@@ -1,5 +1,5 @@
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef ADVENTURE_ITEM_H
+#define ADVENTURE_ITEM_H
 
 #include <string>
 #include <vector>

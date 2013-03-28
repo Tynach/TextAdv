@@ -1,5 +1,5 @@
-#ifndef WORLD_H
-#define WORLD_H
+#ifndef ADVENTURE_WORLD_H
+#define ADVENTURE_WORLD_H
 
 #include <obj/container.h>
 

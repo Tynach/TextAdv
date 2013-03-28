@@ -1,5 +1,5 @@
-#ifndef MY_EXCEPTIONS_H
-#define MY_EXCEPTIONS_H
+#ifndef ADVENTURE_EXCEPTIONS_H
+#define ADVENTURE_EXCEPTIONS_H
 
 #include <stdexcept>
 using std::runtime_error;

@@ -1,5 +1,5 @@
-#ifndef ROOM_H
-#define ROOM_H
+#ifndef ADVENTURE_ROOM_H
+#define ADVENTURE_ROOM_H
 
 #include <obj/container.h>
 

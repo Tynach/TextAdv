@@ -1,5 +1,5 @@
-#ifndef CONTAINER_H
-#define CONTAINER_H
+#ifndef ADVENTURE_CONTAINER_H
+#define ADVENTURE_CONTAINER_H
 
 #include <vector>
 #include <string>
